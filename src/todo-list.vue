@@ -5,6 +5,7 @@
 </style>
 
 <template>
+  <strong>Enter a todo:</strong>
   <input v-model="newTodo" @keyup.enter="addTodo">
   <ul>
     <li v-for="todo in todos">
@@ -15,14 +16,16 @@
 </template>
 
 <script>
-module.exports = {
-  el: '#todo-app',
-  data: {
-    newTodo: '',
-    todos: [
-      { text: 'Add some todos' }
-    ]
+export default {
+  data () {
+    return {
+      newTodo: '',
+      todos: [
+        { text: 'Add some todos' }
+      ]
+    }
   },
+
   methods: {
     addTodo: function () {
       var text = this.newTodo.trim()
@@ -35,5 +38,5 @@ module.exports = {
       this.todos.splice(index, 1)
     }
   }
-};
+}
 </script>

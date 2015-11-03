@@ -4,6 +4,6 @@ var todoList = require('./todo-list.vue')
 new Vue({
   el: 'body',
   components: {
-    todos: todoList
+    'todos-list': todoList
   }
 })
