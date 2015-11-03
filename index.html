@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>try vue</title>
-  <script src="http://cdn.jsdelivr.net/vue/1.0.4/vue.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/vue/1.0.4/vue.js"></script>
 </head>
 <body>
   <h2>hello world</h2>
@@ -53,5 +53,26 @@
       }
     })
   </script>
+
+  <h2>click example</h2>
+  <div id="click-app">
+    <p>{{ message }}</p>
+    <button @click="reverseMessage">Reverse Message</button>
+  </div>
+  <script>
+    new Vue({
+      el: '#click-app',
+      data: {
+        message: 'Hello Vue.js!'
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+
+  <h2>Todo example</h2>
 </body>
 </html>
