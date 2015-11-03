@@ -17,5 +17,20 @@
       }
     });
   </script>
+
+  <h2>two-way data binding</h2>
+  <div id="two-way-example">
+    <p>{{ message }}</p>
+    Try changing the input box
+    <input v-model="message">
+  </div>
+  <script>
+    new Vue({
+      el: '#two-way-example',
+      data: {
+        message: 'Hello Vue.js!'
+      }
+    })
+  </script>
 </body>
 </html>
