@@ -32,5 +32,26 @@
       }
     })
   </script>
+
+  <h2>list example</h2>
+  <div id="list-app">
+    <ul>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ul>
+  </div>
+  <script>
+    new Vue({
+      el: '#list-app',
+      data: {
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue.js' },
+          { text: 'Build Something Awesome' }
+        ]
+      }
+    })
+  </script>
 </body>
 </html>
