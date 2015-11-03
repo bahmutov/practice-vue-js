@@ -1,6 +1,6 @@
-<style>
-.todo-list ul {
-  list-style-type: 'none';
+<style scoped>
+ul {
+  list-style-type: none;
 }
 </style>
 
