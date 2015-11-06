@@ -2,6 +2,9 @@
 
 Trying to learn [vue.js](http://vuejs.org/)
 
+Clone this repo, install dependencies, then run `npm run dev`
+and open `localhost:8080`.
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
