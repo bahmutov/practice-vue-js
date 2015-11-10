@@ -11,6 +11,8 @@ new Vue({
 new Vue({
   el: '#filtering-demo',
   data: {
+    sortKey: '',
+    reversedSort: false,
     people: [
       { name: 'john', age: 21 },
       { name: 'jim', age: 10 },
@@ -20,7 +22,17 @@ new Vue({
       { name: 'caleb', age: 78 },
       { name: 'kate', age: 30 },
       { name: 'kat', age: 39 },
-      { name: 'sam', age: 39 }
+      { name: 'adam', age: 39 }
     ]
+  },
+  methods: {
+    sortBy: function sortBy(key) {
+      if (this.sortKey === key) {
+        this.reversedSort = this.reversedSort * -1;
+      } else {
+        this.sortKey = key;
+        this.reversedSort = 1;
+      }
+    }
   }
 })

@@ -5,7 +5,7 @@
     <title>Vue Webpack Example</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
-  <body>
+  <body class="container">
     <h2>Todo list as component</h2>
     <div id="todos-demo">
       <todos-list></todos-list>
@@ -16,12 +16,12 @@
     <table id="filtering-demo" class="table table-striped">
       <thead>
         <tr>
-          <th><a href="#">Name</a></th>
-          <th><a href="#">Age</a></th>
+          <th><a href="#" @click="sortBy('name')">Name</a></th>
+          <th><a href="#" @click="sortBy('age')">Age</a></th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="person in people">
+        <tr v-for="person in people | orderBy sortKey reversedSort">
           <td>{{ person.name }}</td>
           <td>{{ person.age }}</td>
         </tr>
