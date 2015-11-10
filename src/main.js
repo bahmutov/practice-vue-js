@@ -11,6 +11,8 @@ new Vue({
 new Vue({
   el: '#filtering-demo',
   data: {
+    columns: ['name', 'age'],
+    searchText: '',
     sortKey: '',
     reversedSort: false,
     people: [

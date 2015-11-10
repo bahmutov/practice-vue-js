@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Vue Webpack Example</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
   </head>
   <body class="container">
     <h2>Todo list as component</h2>
@@ -13,21 +14,25 @@
 
     <h2>Filtering demo</h2>
     <p>Based on this <a href="https://laracasts.com/series/learning-vuejs/episodes/6">tutorial</a>.</p>
-    <table id="filtering-demo" class="table table-striped">
-      <thead>
-        <tr>
-          <th><a href="#" @click="sortBy('name')">Name</a></th>
-          <th><a href="#" @click="sortBy('age')">Age</a></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="person in people | orderBy sortKey reversedSort">
-          <td>{{ person.name }}</td>
-          <td>{{ person.age }}</td>
-        </tr>
-      </tbody>
-    </table>
-
+    <div id="filtering-demo">
+      <input type="text" v-model="searchText" class="form-control">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th v-for="column in columns">
+              <a href="#" @click="sortBy(column)"
+                v-bind:class="{ active: sortKey === column }">{{ column | capitalize }}</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="person in people | filterBy searchText | orderBy sortKey reversedSort">
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <script src="dist/build.js"></script>
   </body>
 </html>
